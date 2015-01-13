@@ -1,0 +1,13 @@
+web:
+  build: nginx-php/
+  links:
+    - mysql:mysql
+  ports:
+    - 80:80
+  volumes:
+    - ./app:/usr/share/nginx/html
+
+mysql:
+  image: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=1234
